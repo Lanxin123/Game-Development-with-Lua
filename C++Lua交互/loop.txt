@@ -1,0 +1,23 @@
+lua的循环语句包括如下类型：while循环、repeat循环、for循环和generic for循环，
+这几种循环各有各的特点。详见loop.lua。
+
+
+table.get()函数的使用条件：只有table的索引是数字（默认为数字）时才能正确的到表中的元素个数。
+
+注意while循环和repeat循环的判断是相反的。（while先判断repeat until后判断）。
+
+genneric for的另一种形式可以写为： for value in ipairs（Languages）。
+
+示例中的generic for实际上有第三个参数，不过是可选的，表示步长，默认是1，当然也可以是负数。
+
+lua有一点与大多数语言不同，就是一个声明在循环体中的局部变量的作用域包括条件测试。
+例如：在repeat和until之间定义的局部变量可以放在until后边的条件判断。
+local a = 0
+
+   repeat
+
+      a = a+2
+
+      local b = a*3
+
+   until b > 1000
